@@ -4,7 +4,7 @@
   "description": "Perfect Pose Front End Layout",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -r ./dist/* && cp ./src/index.html ./dist/ && cp -rv ./assets ./dist/ && babel ./src/ -d ./dist/ && lessc ./src/styles/build.less ./dist/styles/build.css",
+    "build": "cp ./src/index.html ./dist/ && cp -rv ./assets ./dist/ && babel ./src/ -d ./dist/ && lessc ./src/styles/build.less ./dist/styles/build.css",
     "serve": "npx serve ./dist/",
     "start": "npm run build && npm run serve"
   },
