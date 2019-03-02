@@ -1,0 +1,115 @@
+// ==============================================
+// Functions
+// ==============================================
+
+// These are mixins as functions
+// Available in Less.js v.3 and higher
+// Some editors do not recognize the usage and complain
+// This is valid syntax
+
+.to(@target, @context: 16 ) {
+    @em: ((@target / @context) + 0em);
+  }
+  
+  .toR(@target, @context: 16 ) {
+    @rem: ((@target / @context) + 0rem);
+  }
+  
+  // Media queries
+  // ============================= //
+  
+  @above-mobile: ~"screen and (min-width: 768px)";
+  @mobile: ~"screen and (max-width: 767px)";
+  
+  //
+  // ==============================================
+  // Variables
+  // ==============================================
+  //
+  
+  //Layout
+  
+  @max-tabs-width: 670px;
+  @max-tabs-nav-width: 544px;
+  
+  @padding-mobile: 18px;
+  
+  //Color variables
+  
+  @text-cl: #000000;
+  
+  //
+  // ==============================================
+  // Typography
+  // ==============================================
+  //
+  
+  
+  //Font size variables
+  @base-font: 'Open Sans', sans-serif;
+  
+  //Typography variables
+  
+  //
+  // ==============================================
+  // Mixins
+  // ==============================================
+  //
+  
+  .flex() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  .flex-direction(@flex-direction) {
+    -webkit-flex-direction: @flex-direction;
+    -ms-flex-direction: @flex-direction;
+    flex-direction: @flex-direction;
+  }
+  
+  .justify-content(@justify-content) {
+    -webkit-justify-content: @justify-content;
+    justify-content: @justify-content;
+  }
+  
+  .align-items(@align-items) {
+    -webkit-align-items: @align-items;
+    align-items: @align-items;
+  }
+  
+  .flex-wrap(@wrap) {
+    -ms-flex-wrap: @wrap;
+    flex-wrap: @wrap;
+  }
+  
+  .transition(@transition-property, @transition-duration, @transition-timing-function, @transition-delay: 0s) {
+      -webkit-transition: @transition-property @transition-duration @transition-timing-function @transition-delay;
+      -o-transition: @transition-property @transition-duration @transition-timing-function @transition-delay;
+      transition: @transition-property @transition-duration @transition-timing-function @transition-delay;
+  }
+  
+  .heading-3(@color: #000) {
+    text-transform: uppercase;
+    font-size: .toR(18)[@rem];
+    letter-spacing: 2.5px;
+    color: @color;
+    font-weight: bold;
+  }
+  
+  .accordion-label(@color: #000) {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1.8px;
+    color: @color;
+    font-weight: bold;
+  }
+  
+  .base-text {
+    font-family: @base-font;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: normal;
+    line-height: .to(16, 13)[@em];
+  }

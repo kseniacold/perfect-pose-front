@@ -1,0 +1,20 @@
+{
+  "name": "perfect-pose-front",
+  "version": "1.0.0",
+  "description": "Perfect Pose Front End Layout",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -r ./dist/* && cp ./src/index.html ./dist/ && cp -rv ./assets ./dist/ && babel ./src/ -d ./dist/ && lessc ./src/styles/build.less ./dist/styles/build.css",
+    "serve": "npx serve ./dist/",
+    "start": "npm run build && npm run serve"
+  },
+  "author": "Ksenia Koldaeva",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "less": "^3.9.0",
+    "serve": "^10.1.2"
+  }
+}
